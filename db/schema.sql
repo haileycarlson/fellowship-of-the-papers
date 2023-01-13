@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS fellowship;
+CREATE DATABASE fellowship;
