@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all papers and JOIN with user data
     const paperData = await Paper.findAll({
       include: [
         {
@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const papers = paperData.map((paper) => paper.get({ plain: true }));
+    console.log(papers);
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -27,9 +28,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/paper/:id', async (req, res) => {
   try {
-    const projectData = await Paper.findByPk(req.params.id, {
+    const paperData = await Paper.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,10 +39,10 @@ router.get('/project/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const paper = paperData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('paper', {
+      ...paper,
       logged_in: req.session.logged_in
     });
   } catch (err) {
