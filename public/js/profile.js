@@ -1,47 +1,48 @@
 const newFormHandler = async (event) => {
-  event.preventDefault();
+  event.preventDefault()
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const name = document.querySelector('#paper-name').value.trim()
+  const paperfile = document.querySelector('#paper-file')
+  const description = document.querySelector('#paper-desc').value.trim()
+  const formData = new FormData()
+  formData.append('name', name)
+  formData.append('description', description)
+  formData.append('paperfile', paperfile.files[0])
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (name && paperfile && description) {
+    const response = await fetch(`/api/papers`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+      body: formData,
+    })
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/profile')
     } else {
-      alert('Failed to create project');
+      alert('Failed to create paper')
     }
   }
-};
+}
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+    const id = event.target.getAttribute('data-id')
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/paper/${id}`, {
       method: 'DELETE',
-    });
+    })
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/profile')
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete paper')
     }
   }
-};
+}
 
 document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+  .querySelector('.new-paper-form')
+  .addEventListener('submit', newFormHandler)
 
 document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('.paper-list')
+  .addEventListener('click', delButtonHandler)

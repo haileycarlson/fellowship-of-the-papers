@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Paper, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    // Get all papers and JOIN with user data
+    const paperData = await Paper.findAll({
       include: [
         {
           model: User,
@@ -15,21 +15,22 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const papers = paperData.map((paper) => paper.get({ plain: true }));
+    console.log(papers);
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
+      papers, 
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/paper/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const paperData = await Paper.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,10 +39,10 @@ router.get('/project/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const paper = paperData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('paper', {
+      ...paper,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -55,7 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Paper }],
     });
 
     const user = userData.get({ plain: true });
