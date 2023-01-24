@@ -14,7 +14,7 @@
         <input class="form-input" type="text" id="paper-name" name="paper-name" />
       </div>
       <div class="form-group">
-        <label for="paper-funding"> upload paper? change later ($):</label>
+        <label for="paper-funding"> upload paper? change later:</label>
         <input class="form-input" type="file" id="paper-file" name="paper-funding" />
       </div>
       <div class="form-group">
@@ -26,9 +26,9 @@
       </div>
     </form>
   </div>
-
+<div class="col-md-6 paper-list">
   {{#if papers.length}}
-  <div class="col-md-6 paper-list">
+  
     <h3>Current papers:</h3>
 
     {{#each papers as |paper|}}
@@ -41,8 +41,8 @@
       </div>
     </div>
     {{/each}}
-  </div>
   {{/if}}
+  </div>
 </div>
 
 <script src="./js/profile.js"></script>
