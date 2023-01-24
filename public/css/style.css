@@ -2,23 +2,69 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .no-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: olive;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: olive;
   text-decoration: underline;
 }
 
 .dollar-amount {
-  color: #056605;
+  color: olive;
   font-weight: bold;
   margin-left: -5px;
+}
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fefaf6;
+}
+
+.search-button {
+  background-color: #c77795;
+  color: #f8ede0;
+  text-align: center;
+}
+
+.search-button:hover {
+  background-color: #d394ab;
+}
+
+.button {
+  text-align: center;
+  padding: 20px;
+}
+
+.card-search-text {
+  text-align: center;
+  padding: 20px;
+}
+
+#search-form {
+  text-align: center;
+}
+p {
+  text-align: center;
+  padding: 40px;
+  background-color: #f8ede0;
+}
+
+h5 {
+  text-align: center;
+  padding: 20px;
 }
