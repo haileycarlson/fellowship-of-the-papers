@@ -1,28 +1,4 @@
 <!-- Loop over each object in the papers array -->
-{{#each papers as |paper| }}
-<div class="row mb-4 paper">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/paper/{{paper.id}}">{{paper.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{paper.paper_url}}</span>
-      test text
-    </p>
-    <p>Created by {{paper.user.name}} on {{format_date paper.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{paper.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
-
 <section>
                 <h5 class="center">Why Peer Review?</h5>
                 <p>
@@ -45,3 +21,22 @@
                     <button class="search-button">Search Subject</button>
                 </div>
             </section>
+<div class="paper-wrapper">
+{{#each papers as |paper| }}
+{{!-- <div class="row mb-4 paper"> --}}
+  <div class="paper-item">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/paper/{{paper.id}}">{{paper.name}}</a>
+    </h2>
+    <p>
+      {{paper.description}}
+      <!-- Pass needed_funding value to the helper function -->
+    </p>
+    <p>Created by {{paper.user.name}} on {{format_date paper.date_created}}</p>
+  </div>
+</div>
+{{/each}}
+</div>

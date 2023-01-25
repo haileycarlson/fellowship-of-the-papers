@@ -11,18 +11,18 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: olive;
+  color: #759578;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: olive;
+  color: #759578;
   text-decoration: underline;
 }
 
 .dollar-amount {
-  color: olive;
+  color: #759578;
   font-weight: bold;
   margin-left: -5px;
 }
@@ -47,7 +47,7 @@ body {
 
 .button {
   text-align: center;
-  padding: 20px;
+  padding: 14px;
 }
 
 .card-search-text {
@@ -67,4 +67,20 @@ p {
 h5 {
   text-align: center;
   padding: 20px;
+}
+
+.paper-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.paper-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
