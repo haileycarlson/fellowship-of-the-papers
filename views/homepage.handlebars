@@ -1,6 +1,30 @@
 <!-- Loop over each object in the papers array -->
+<section>
+                <h5 class="center">Why Peer Review?</h5>
+                <p>
+                    Peer review is an important component of the academic writing process within the 
+                    scientific community. With our platform, you can help empower other researchers 
+                    through voluntary peer review and help in assessing the validity, quality, and 
+                    originality of each aritcle in order for them to be published.
+                </p>
+            </section>
+            <section>
+                <div id="search-form">
+                    <input type="text" class="form-input" name="find-subject" placeholder="Enter Word" />
+                </div>
+                <div class="center">
+                    <div class="card-search-text">
+                        Click Button To Search For Subject:
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="search-button">Search Subject</button>
+                </div>
+            </section>
+<div class="paper-wrapper">
 {{#each papers as |paper| }}
-<div class="row mb-4 paper">
+{{!-- <div class="row mb-4 paper"> --}}
+  <div class="paper-item">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -8,17 +32,11 @@
       <a href="/paper/{{paper.id}}">{{paper.name}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="money">💲</span>
+      {{paper.description}}
       <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{paper.paper_url}}</span>
-      test text
     </p>
     <p>Created by {{paper.user.name}} on {{format_date paper.date_created}}</p>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{paper.description}}
-    </p>
-  </div>
 </div>
 {{/each}}
+</div>

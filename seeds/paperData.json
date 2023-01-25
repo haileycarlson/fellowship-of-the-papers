@@ -1,17 +1,17 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "name": "Why Are Coral Reefs Dying?",
+    "description": "Over 50 percent of the world's coral reefs have died in the last 30 years and up to 90 percent may die within the next century. Why is this happening and what can we do to help them?",
     "paper_url": "https://www.google.com/"
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "name": "Science Advances",
+    "description": "A deep-dive into some of the biggest scientific breakthroughs in the last decade.",
     "paper_url": "https://www.google.com/"
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "name": "Robotics",
+    "description": "How advances in Robotics are shaping the future and a look into some of the latest innovations.",
     "paper_url": "https://www.google.com/"
   }
 ]
