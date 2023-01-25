@@ -10,9 +10,9 @@ N/A
 
 ## Usage
 
+Used to learn new information from different subject areas. Upload your own papers or work to get others to review them so you can better your work!
 
 
-![alt text](assets/images/screenshot.png)
 
 ## Credits
 
@@ -28,7 +28,7 @@ N/A
 
 ## Features
 
-[Materialize] https://materializecss.com/badges.html
+[Tailwind] https://tailwindcss.com/
 
 ## How to Contribute
 
