@@ -503,6 +503,7 @@ a:hover {
 
 .mb-4 {
   margin-bottom: 1.375rem;
+  text-align: center;
 }
 
 .mb-5 {
@@ -1019,7 +1020,7 @@ a:hover {
 
 .btn.btn-danger {
   background-color: #e64c66;
-  color: #ffffff;
+  color: #f8ede0;
 }
 
 .btn.btn-danger:hover {
