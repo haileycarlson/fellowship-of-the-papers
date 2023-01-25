@@ -420,12 +420,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #759578;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #759578b8;
   text-decoration: underline;
 }
 
@@ -503,6 +503,7 @@ a:hover {
 
 .mb-4 {
   margin-bottom: 1.375rem;
+  text-align: center;
 }
 
 .mb-5 {
@@ -937,7 +938,7 @@ a:hover {
 }
 
 .bg-white {
-  background-color: #ffffff !important;
+  background-color: white !important;
 }
 
 .bg-black {
@@ -1009,17 +1010,17 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
-  color: #d9e9e8;
+  background-color: #c77795;
+  color: #f8ede0;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #d394ab;
 }
 
 .btn.btn-danger {
   background-color: #e64c66;
-  color: #ffffff;
+  color: #f8ede0;
 }
 
 .btn.btn-danger:hover {
